@@ -35,7 +35,7 @@ useHead({
 })
 
 useSeoMeta({
-  author: 'Hugo Richard',
+  author: 'shigatena666',
   ogType: 'website',
   ogTitle: appConfig.appName,
   ogSiteName: 'Canvas',

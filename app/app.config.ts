@@ -1,5 +1,5 @@
 export default defineAppConfig({
-  appName: 'shigatena\'s website',
+  appName: 'shigatena',
   appDescription: 'Built using Canvas. Based on Nuxt and Tailwind CSS. Made by HugoRCD.',
   profilePicture: '/assets/profile_picture.jpg',
   footerName: 'shigatena666',
