@@ -20,7 +20,7 @@ const { profilePicture } = useAppConfig()
         />
         <NuxtImg
           width="256"
-          src="/assets/hugo-richard-light.webp"
+          src="/assets/profile_picture.jpg"
           class="relative size-64 rounded-xl object-cover grayscale transition-all duration-300 group-hover:grayscale-0"
           alt="Hugo Richard Profile Picture"
           aria-label="Hugo Richard Profile Picture"
