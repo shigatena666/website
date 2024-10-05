@@ -11,7 +11,7 @@
         <SpotlightButton>
           <NuxtLink
             class="white-gradient relative flex items-center justify-center gap-2 transition-all duration-200"
-            to="/contact"
+            to="/"
           >
             {{ $t("global.contact") }}
             <UIcon

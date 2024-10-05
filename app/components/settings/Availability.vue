@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const runtimeConfig = useRuntimeConfig().public
-const isAvailable = ref<'true' | 'false'>(runtimeConfig.available as 'true' | 'false')
+const isAvailable = ref(runtimeConfig.available)
 
 const availability = ref([
   {
