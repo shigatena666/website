@@ -24,23 +24,5 @@ const { data: stack } = await useAsyncData('stack', () => queryContent('/stack')
     </div>
     <Divider class="my-8" />
     <ContentSlot :use="$slots.experiences" />
-    <Divider class="my-8" />
-    <div class="flex flex-col gap-3">
-      <div class="mb-6 flex flex-col gap-1">
-        <h3 class="text-white-shadow font-newsreader  text-3xl">
-          <ContentSlot :use="$slots.stack_title" />
-        </h3>
-        <p class="text-sm text-muted">
-          <ContentSlot :use="$slots.stack_description" />
-        </p>
-      </div>
-      <div class="flex flex-wrap gap-4">
-        <AboutStackItem
-          v-for="item in stack!.items"
-          :key="item.name"
-          :item
-        />
-      </div>
-    </div>
-  </section>
+    </section>
 </template>

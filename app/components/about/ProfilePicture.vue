@@ -8,7 +8,7 @@ const { profilePicture } = useAppConfig()
       mode="after"
       from="rgba(255,255,255,0.1)"
       :size="350"
-      class="group hidden w-64 rounded-2xl border border-white/10 bg-white/5 p-2 pb-4 sm:flex"
+      class="group hidden w-64 rounded-2xl border border-white/10 bg-white/5 p-2 sm:flex"
     >
       <div class="relative">
         <NuxtImg

@@ -28,7 +28,7 @@ const navigation = getNavigation('home') as Record<string, Navigation>
             :aria-label="item.name + ' navigation link'"
             :class="[
               item.to === $route.path
-                ? 'border border-white/5 bg-zinc-900/10 text-white/75 shadow-2xl shadow-white/50 backdrop-blur-3xl text-shadow-sm'
+                ? 'border border-white/5 bg-purple-900/10 text-white/75 shadow-2xl shadow-white/50 backdrop-blur-3xl text-shadow-sm'
                 : 'text-muted',
             ]"
             :to="item.to"
