@@ -5,6 +5,7 @@ useHead({
   title: () => appConfig.appName,
   titleTemplate: () => appConfig.appName,
 })
+const { data: stack } = await useAsyncData('stack', () => queryContent('/stack').findOne())
 </script>
 
 <template>
@@ -38,27 +39,39 @@ useHead({
 
         <SettingsAvailability
           background
-          class="mt-10"
+          class="mt-8"
           style="--stagger: 2"
-          data-animate
-        />
-
-        <Divider class="mt-8" />
-
-        <!-- social -->
-        <HomeSocial
-          style="--stagger: 3"
-          data-animate
-        />
-
-        <!-- cta -->
-        <HomeCTA
-          style="--stagger: 4"
           data-animate
         />
 
         <Divider class="my-8" />
 
+        <!-- cta -->
+        <HomeCTA
+          style="--stagger: 5"
+          data-animate
+        />
+
+        <Divider class="my-8" />
+        
+        <div class="flex flex-wrap max-w-xl gap-4 items-center justify-center">
+          <AboutStackItem
+            v-for="item in stack!.items"
+            :key="item.name"
+            :item
+            style="--stagger: 3"
+            data-animate
+          />
+        </div>
+
+        <Divider class="mt-8" />
+
+        <!-- social -->
+        <HomeSocial
+          style="--stagger: 4"
+          data-animate
+        />
+        
       </div>
     </div>
   </section>
