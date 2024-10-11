@@ -13,9 +13,9 @@ const availability = ref([
   {
     status: 'unavailable',
     message: 'Not available for hire',
-    color: 'bg-red-500',
-    bgColor: 'bg-red-400',
-    textColor: 'text-red-400',
+    color: 'bg-purple-500',
+    bgColor: 'bg-purple-400',
+    textColor: 'text-purple-400',
   },
 ])
 
