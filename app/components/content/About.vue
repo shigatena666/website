@@ -10,9 +10,10 @@ const { data: stack } = await useAsyncData('stack', () => queryContent('/stack')
     <h2 class="text-center text-lg font-extralight  text-muted">
       <ContentSlot :use="$slots.subtitle" />
     </h2>
-    <Divider class="mb-8 mt-2" />
+
+    <Divider class="my-8" />
+
     <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-      <AboutProfilePicture />
       <div class="relative flex flex-col gap-3 sm:ml-4">
         <h3 class="text-lg text-muted">
           Intro
@@ -20,9 +21,39 @@ const { data: stack } = await useAsyncData('stack', () => queryContent('/stack')
         <div class="flex flex-col gap-4 text-main">
           <ContentSlot :use="$slots.intro" />
         </div>
+
+        <Divider class="my-8" />
+
+        <div class="flex flex-col gap-4 text-main">
+          <ContentSlot :use="$slots.experiences" />
+        </div>
+
+        <Divider class="my-8" />
+
+        <div class="mb-6 flex flex-col gap-1">
+          <h3 class="text-white-shadow font-newsreader italic text-3xl">
+            <ContentSlot :use="$slots.stack_title" />
+          </h3>
+          <p class="text-sm text-muted">
+            <ContentSlot :use="$slots.stack_description" />
+          </p>
+        </div>
+        <div class="flex flex-col gap-4 text-main">
+          <div class="z-20 flex flex-col items-center justify-center">
+            <div class="flex flex-wrap max-w-xl gap-4 items-center justify-center">
+              <AboutStackItem
+                v-for="item in stack!.items"
+                :key="item.name"
+                :item 
+              />
+            </div>
+          </div>
+        </div>
+
+        <Divider class="my-8" />
+        
       </div>
     </div>
-    <Divider class="my-8" />
-    <ContentSlot :use="$slots.experiences" />
-    </section>
+    
+  </section>
 </template>
