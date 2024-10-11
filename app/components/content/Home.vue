@@ -9,13 +9,11 @@ useHead({
 
 <template>
   <section class="relative pt-12">
-    <!-- grid -->
-    <div class="pointer-events-none absolute inset-0 bg-center bg-grid-white/10 bg-grid-16 [mask-image:radial-gradient(white,transparent_85%)]" />
-
     <div class="relative mx-auto flex max-w-7xl flex-col justify-center gap-4 px-4 py-8 sm:px-6 lg:px-8 lg:py-16">
+      
       <!-- spotlight -->
       <div
-        class="absolute -top-8 left-1/2 size-72 -translate-x-1/2 rounded-full bg-white/25 blur-[120px] lg:-top-8 lg:size-[32rem] lg:blur-[200px]"
+        class="absolute -top-8 left-1/2 size-72 -translate-x-1/2 rounded-full bg-white/25 blur-[150px] lg:-top-8 lg:size-[15rem] lg:blur-[200px]"
       />
 
       <!-- profile picture -->
@@ -40,10 +38,12 @@ useHead({
 
         <SettingsAvailability
           background
-          class="mt-2"
+          class="mt-10"
           style="--stagger: 2"
           data-animate
         />
+
+        <Divider class="mt-8" />
 
         <!-- social -->
         <HomeSocial
@@ -57,14 +57,8 @@ useHead({
           data-animate
         />
 
-        <div
-          style="--stagger: 5"
-          data-animate
-          class="mt-12 flex w-full max-w-3xl flex-col gap-4 lg:mt-16"
-        >
-          <!-- projects -->
-          <HomeProjects />
-        </div>
+        <Divider class="my-8" />
+
       </div>
     </div>
   </section>

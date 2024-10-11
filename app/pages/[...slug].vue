@@ -70,7 +70,7 @@ defineShortcuts({
           </ContentQuery>
         </NuxtLayout>
         <Toaster close-button />
-        <DotPattern class="absolute inset-0 -z-10 size-full fill-white/5 [mask-image:radial-gradient(white,transparent_85%)]" />
+        <DotPattern class="absolute inset-0 -z-10 size-full fill-white/5" />
       </Body>
     </Html>
   </div>

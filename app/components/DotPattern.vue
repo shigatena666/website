@@ -6,7 +6,7 @@ defineProps({
   },
   radius: {
     type: Number,
-    default: 1,
+    default: 3,
   },
   offsetX: {
     type: Number,
@@ -32,8 +32,8 @@ defineProps({
         :y="offsetY"
       >
         <circle
-          :cx="size / 2"
-          :cy="size / 2"
+          :cx="size"
+          :cy="size"
           :r="radius"
         />
       </pattern>
