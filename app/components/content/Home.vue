@@ -5,6 +5,7 @@ useHead({
   title: () => appConfig.appName,
   titleTemplate: () => appConfig.appName,
 })
+
 const { data: stack } = await useAsyncData('stack', () => queryContent('/stack').findOne())
 </script>
 

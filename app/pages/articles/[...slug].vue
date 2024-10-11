@@ -41,56 +41,54 @@ defineOgImage({
 })
 </script>
 
+
 <template>
-  <div class="selection:bg-white/60 selection:text-zinc-800">
-    <div>
-      <NuxtLink
-        to="/writing"
-        class="mx-auto my-8 flex cursor-pointer items-center gap-2 px-4 text-muted transition-colors duration-200 hover:text-main sm:max-w-2xl md:max-w-3xl lg:max-w-4xl"
-      >
-        <span class="i-lucide-arrow-left size-4" />
-        <span class="text-sm font-extralight">
-          {{ $t("navigation.writing") }}
-        </span>
-      </NuxtLink>
-      <SettingsLanguageToggle class="fixed bottom-4 right-4 sm:bottom-4" />
-      <article class="writing prose mx-auto px-4 sm:max-w-2xl md:max-w-3xl lg:max-w-4xl">
-        <h1>
-          {{ page?.title }}
-        </h1>
-        <div class="info-section mt-1 flex flex-col gap-2 sm:flex-row sm:gap-4">
-          <p>{{ page?.date }}</p>
-          <p class="hidden sm:block">
-            |
-          </p>
-          <p>{{ page?.readingTime }} {{ $t("writing.readingTime") }}</p>
-          <p class="hidden sm:block">
-            |
-          </p>
-          <UTooltip
-            :text="$t('writing.copy_link')"
-            :shortcuts="['⌘', 'K']"
-          >
-            <p
-              class="flex cursor-pointer select-none items-center gap-1 transition-colors duration-200 hover:text-main"
-              @click="copyArticleLink"
+  <div>
+    <Html
+      :lang="$i18n.locale"
+      class="bg-zinc-950 text-main font-geist transition-colors duration-300 selection:bg-white/60 selection:text-zinc-800"
+    >
+      <Body>
+        <LayoutScrollToTop />
+        <NuxtLayout>
+          <article class="writing prose mx-auto px-4 sm:max-w-2xl md:max-w-3xl lg:max-w-4xl py-10">
+            <h1>
+              {{ page?.title }}
+            </h1>
+            <div class="info-section mt-1 flex flex-col gap-2 sm:flex-row sm:gap-4">
+              <p>{{ page?.date }}</p>
+              <p class="hidden sm:block">
+                |
+              </p>
+              <p>{{ page?.readingTime }} {{ $t("writing.readingTime") }}</p>
+              <p class="hidden sm:block">
+                |
+              </p>
+              <UTooltip
+                :text="$t('writing.copy_link')"
+                :shortcuts="['⌘', 'K']"
+              >
+                <p
+                  class="flex cursor-pointer select-none items-center gap-1 transition-colors duration-200 hover:text-main"
+                  @click="copyArticleLink"
+                >
+                  {{ $t("writing.share") }}
+                </p>
+              </UTooltip>
+            </div>
+            <ContentQuery
+              v-slot="{ data }"
+              :path="$route.path"
+              :locale="locale"
+              find="one"
             >
-              {{ $t("writing.share") }}
-            </p>
-          </UTooltip>
-        </div>
-        <ContentQuery
-          v-slot="{ data }"
-          :path="$route.path"
-          :locale="locale"
-          find="one"
-        >
-          <ContentRenderer :value="data" />
-        </ContentQuery>
-      </article>
-      <LayoutFooter class="pt-6" />
-      <Toaster close-button />
-    </div>
+              <ContentRenderer :value="data" />
+            </ContentQuery>
+          </article>
+        </NuxtLayout>
+        <DotPattern class="absolute inset-0 -z-10 size-full fill-white/5" />
+      </Body>
+    </Html>
   </div>
 </template>
 

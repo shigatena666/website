@@ -69,7 +69,6 @@ defineShortcuts({
             <ContentRenderer :value="data" />
           </ContentQuery>
         </NuxtLayout>
-        <Toaster close-button />
         <DotPattern class="absolute inset-0 -z-10 size-full fill-white/5" />
       </Body>
     </Html>

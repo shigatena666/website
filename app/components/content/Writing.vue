@@ -5,7 +5,7 @@ const { locale } = useI18n()
 
 const searchedTags = ref<string[]>([])
 const searchedTitle = ref('')
-const showSearch = ref(false)
+const showSearch = ref(true)
 
 const { data } = await useAsyncData('articles', () =>
   queryContent('/articles')
