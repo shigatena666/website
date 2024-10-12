@@ -51,7 +51,15 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'nuxt-og-image',
     '@nuxt/fonts',
+    '@nuxtjs/mdc'
   ],
+
+  mdc: {
+    highlight: {
+      theme: 'github-dark',
+      langs: ['c', 'python', 'javascript', 'typescript', 'html', 'css', 'vue']
+    }
+  },
 
   image: {
     format: ['webp'],

@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
   // Fetch all documents
   const docs = await serverQueryContent(event).find()
   const sitemap = new SitemapStream({
-    hostname: 'https://canvas.hrcd.fr',
+    hostname: 'https://localhost',
   })
 
   for (const doc of docs) {
@@ -21,14 +21,6 @@ export default defineEventHandler(async (event) => {
   })
   sitemap.write({
     url: '/about',
-    changefreq: 'daily',
-  })
-  sitemap.write({
-    url: '/contact',
-    changefreq: 'daily',
-  })
-  sitemap.write({
-    url: '/works',
     changefreq: 'daily',
   })
   sitemap.write({

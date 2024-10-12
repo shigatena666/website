@@ -38,7 +38,7 @@ useSeoMeta({
   author: 'shigatena666',
   ogType: 'website',
   ogTitle: appConfig.appName,
-  ogSiteName: 'Canvas',
+  ogSiteName: 'shigatena',
   ogUrl: () => runtimeConfig.public.siteUrl,
   ogLocale: () => locale.value,
   twitterTitle: appConfig.appName,

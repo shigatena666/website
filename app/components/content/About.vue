@@ -31,12 +31,9 @@ const { data: stack } = await useAsyncData('stack', () => queryContent('/stack')
         <Divider class="my-8" />
 
         <div class="mb-6 flex flex-col gap-1">
-          <h3 class="text-white-shadow font-newsreader italic text-3xl">
+          <h3 class="text-lg text-muted">
             <ContentSlot :use="$slots.stack_title" />
           </h3>
-          <p class="text-sm text-muted">
-            <ContentSlot :use="$slots.stack_description" />
-          </p>
         </div>
         <div class="flex flex-col gap-4 text-main">
           <div class="z-20 flex flex-col items-center justify-center">

@@ -1,4 +1,11 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+
+const email = ref('contact@shigatena.dev')
+
+const copyEmail = () => {
+  navigator.clipboard.writeText(email.value)
+}
 </script>
 
 <template>
@@ -8,10 +15,11 @@
         :text="$t('global.email')"
         :shortcuts="['⌘', 'O']"
       >
-        <SpotlightButton>
+        <SpotlightButton @click="copyEmail">
           <NuxtLink
             class="white-gradient relative flex items-center justify-center gap-2 transition-all duration-200"
             to="/"
+            @click.prevent="copyEmail"
           >
             {{ $t("global.contact") }}
             <UIcon
