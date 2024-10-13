@@ -3,7 +3,7 @@ import type { PropType } from 'vue'
 
 defineProps({
   skills: {
-    type: Object as PropType<{ title: string, sub_skills: string }[]>,
+    type: Object as PropType<{ title: string, sub_skills: object }[]>,
     required: true,
   },
 })
@@ -16,12 +16,12 @@ defineProps({
         v-for="skill in skills"
         :key="skill.title"
       >
-        <h4 class="font-semibold text-main">
+      <h4 class="font-semibold text-main">
           {{ skill.title }}
         </h4>
-        <div class="flex gap-1 text-muted">
-          <p>
-            {{ skill.sub_skills }}
+        <div class="flex flex-col gap-1 text-muted">
+          <p v-for="(sub_skill, index) in skill.sub_skills" :key="index">
+            > {{Object.keys(sub_skill)[0] }}: {{ Object.values(sub_skill)[0] }}
           </p>
         </div>
       </div>

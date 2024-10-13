@@ -15,17 +15,12 @@ import skills from '~/data/about'
         <h4 class="font-semibold text-main">
           {{ skill.title }}
         </h4>
-        <div class="flex gap-1 text-muted"
-          v-for="sub_skill in skill.sub_skills"
-          :key="skill.title"
-        >
-          <p>
-            {{ skill.sub_skills }}
+        <div class="flex flex-col gap-1 text-muted">
+          <p v-for="(value, key) in skill.sub_skills" :key="key">
+            {{ key }}: {{ value }}
           </p>
         </div>
       </div>
     </div>
   </div>
 </template>
-
-<style scoped></style>
