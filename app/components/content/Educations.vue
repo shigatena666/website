@@ -2,8 +2,8 @@
 import type { PropType } from 'vue'
 
 defineProps({
-  experiences: {
-    type: Object as PropType<{ title: string, date: string, company: string }[]>,
+  educations: {
+    type: Object as PropType<{ title: string, date: string, school: string }[]>,
     required: true,
   },
 })
@@ -13,19 +13,19 @@ defineProps({
   <div class="flex flex-col gap-3">
     <div class="flex flex-col gap-4 text-main">
       <div
-        v-for="experience in experiences"
-        :key="experience.title"
+        v-for="education in educations"
+        :key="education.title"
       >
         <h4 class="font-semibold text-main">
-          {{ experience.title }}
+          {{ education.title }}
         </h4>
         <div class="flex gap-1 text-muted">
           <p>
-            {{ experience.date }}
+            {{ education.date }}
           </p>
           <span class="mx-1"> / </span>
           <p>
-            {{ experience.company }}
+            {{ education.school }}
           </p>
         </div>
       </div>

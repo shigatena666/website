@@ -66,7 +66,6 @@ defineOgImage({
               </p>
               <UTooltip
                 :text="$t('writing.copy_link')"
-                :shortcuts="['⌘', 'K']"
               >
                 <p
                   class="flex cursor-pointer select-none items-center gap-1 transition-colors duration-200 hover:text-main"

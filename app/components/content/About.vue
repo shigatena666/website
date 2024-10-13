@@ -16,7 +16,7 @@ const { data: stack } = await useAsyncData('stack', () => queryContent('/stack')
     <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
       <div class="relative flex flex-col gap-3 sm:ml-4">
         <h3 class="text-lg text-muted">
-          Intro
+          <ContentSlot :use="$slots.intro_title" />
         </h3>
         <div class="flex flex-col gap-4 text-main">
           <ContentSlot :use="$slots.intro" />
@@ -24,17 +24,36 @@ const { data: stack } = await useAsyncData('stack', () => queryContent('/stack')
 
         <Divider class="my-8" />
 
+        <h3 class="text-lg text-muted">
+          <ContentSlot :use="$slots.experiences_title" />
+        </h3>
         <div class="flex flex-col gap-4 text-main">
           <ContentSlot :use="$slots.experiences" />
         </div>
 
         <Divider class="my-8" />
 
-        <div class="mb-6 flex flex-col gap-1">
-          <h3 class="text-lg text-muted">
-            <ContentSlot :use="$slots.stack_title" />
-          </h3>
+        <h3 class="text-lg text-muted">
+          <ContentSlot :use="$slots.education_title" />
+        </h3>
+        <div class="flex flex-col gap-4 text-main">
+          <ContentSlot :use="$slots.education" />
         </div>
+
+        <Divider class="my-8" />
+
+        <h3 class="text-lg text-muted">
+          <ContentSlot :use="$slots.skills_title" />
+        </h3>
+        <div class="flex flex-col gap-4 text-main">
+          <ContentSlot :use="$slots.skills" />
+        </div>
+
+        <Divider class="my-8" />
+
+        <h3 class="text-lg text-muted">
+          <ContentSlot :use="$slots.stack_title" />
+        </h3>
         <div class="flex flex-col gap-4 text-main">
           <div class="z-20 flex flex-col items-center justify-center">
             <div class="flex flex-wrap max-w-xl gap-4 items-center justify-center">
@@ -48,7 +67,7 @@ const { data: stack } = await useAsyncData('stack', () => queryContent('/stack')
         </div>
 
         <Divider class="my-8" />
-        
+
       </div>
     </div>
     

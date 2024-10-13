@@ -1,31 +1,27 @@
 <script setup lang="ts">
-import type { PropType } from 'vue'
-
-defineProps({
-  experiences: {
-    type: Object as PropType<{ title: string, date: string, company: string }[]>,
-    required: true,
-  },
-})
+import educations from '~/data/about'
 </script>
 
 <template>
   <div class="flex flex-col gap-3">
+    <h3 class="text-lg text-muted">
+      {{ $t("about.experience") }}
+    </h3>
     <div class="flex flex-col gap-4 text-main">
       <div
-        v-for="experience in experiences"
-        :key="experience.title"
+        v-for="education in educations[$i18n.locale as 'en' | 'fr']"
+        :key="education.title"
       >
         <h4 class="font-semibold text-main">
-          {{ experience.title }}
+          {{ education.title }}
         </h4>
         <div class="flex gap-1 text-muted">
           <p>
-            {{ experience.date }}
+            {{ education.date }}
           </p>
           <span class="mx-1"> / </span>
           <p>
-            {{ experience.company }}
+            {{ education.school }}
           </p>
         </div>
       </div>
