@@ -15,7 +15,8 @@ export default defineAppConfig({
     primary: 'emerald',
     gray: 'zinc',
     notifications: {
-      position: 'top-0 bottom-auto',
+      // Show toasts at the top right of the screen
+      position: 'top-0 bottom-0'
     },
     notification: {
       progress: {

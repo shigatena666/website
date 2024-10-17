@@ -10,7 +10,7 @@ const { data: stack } = await useAsyncData('stack', () => queryContent('/stack')
 </script>
 
 <template>
-  <section class="relative pt-12">
+  <section class="relative min-h-screen flex items-center justify-center">
     <div class="relative mx-auto flex max-w-7xl flex-col justify-center gap-4 px-4 py-8 sm:px-6 lg:px-8 lg:py-16">
       
       <!-- spotlight -->
@@ -58,6 +58,7 @@ const { data: stack } = await useAsyncData('stack', () => queryContent('/stack')
           style="--stagger: 5"
           data-animate
         />
+        
         
       </div>
     </div>

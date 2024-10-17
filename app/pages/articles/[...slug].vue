@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { Toaster } from 'vue-sonner'
 
+const toast = useToast()
 const { t, locale } = useI18n()
 
 const route = useRoute()
@@ -21,18 +21,8 @@ const { copy } = useClipboard({
 
 function copyArticleLink() {
   copy()
-  toast.success(t('global.article_link_copied'))
+  toast.add({ title: 'Article link copied in your clipboard!' })
 }
-
-defineShortcuts({
-  meta_k: {
-    usingInput: true,
-    handler: () => {
-      copy()
-      toast.success(t('global.article_link_copied'))
-    },
-  },
-})
 
 defineOgImage({
   url: page.value.image,
@@ -64,16 +54,12 @@ defineOgImage({
               <p class="hidden sm:block">
                 |
               </p>
-              <UTooltip
-                :text="$t('writing.copy_link')"
+              <p
+                class="flex cursor-pointer select-none items-center gap-1 transition-colors duration-200 hover:text-main"
+                @click="copyArticleLink"
               >
-                <p
-                  class="flex cursor-pointer select-none items-center gap-1 transition-colors duration-200 hover:text-main"
-                  @click="copyArticleLink"
-                >
-                  {{ $t("writing.share") }}
-                </p>
-              </UTooltip>
+                {{ $t("writing.share") }}
+              </p>
             </div>
             <ContentQuery
               v-slot="{ data }"
