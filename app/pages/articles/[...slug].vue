@@ -41,7 +41,7 @@ defineOgImage({
       <Body>
         <LayoutScrollToTop />
         <NuxtLayout>
-          <article class="writing prose mx-auto px-4 sm:max-w-2xl md:max-w-3xl lg:max-w-4xl py-10">
+          <article class="writing prose mx-auto px-4 sm:max-w-2xl md:max-w-3xl lg:max-w-4xl py-[100px]">
             <h1>
               {{ page?.title }}
             </h1>
@@ -70,6 +70,7 @@ defineOgImage({
               <ContentRenderer :value="data" />
             </ContentQuery>
           </article>
+          <TableOfContents />
         </NuxtLayout>
         <DotPattern class="absolute inset-0 -z-10 size-full fill-white/5" />
       </Body>

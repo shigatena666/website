@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import HackerButton from '../home/HackerButton.vue';
+
 const appConfig = useAppConfig()
 
 useHead({
