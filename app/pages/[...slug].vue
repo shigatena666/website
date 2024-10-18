@@ -16,7 +16,7 @@ const { appName, email } = useAppConfig()
 const { t, locale } = useI18n()
 
 useHead({
-  titleTemplate: `%${appName} | %s`,
+  titleTemplate: `${appName} | %s`,
 })
 
 useSeoMeta({
