@@ -2,65 +2,67 @@
 import { ref, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
+// Utilisation du composable useRoute pour accéder aux informations de route
 const route = useRoute()
+
+// Référence réactive pour stocker les en-têtes
 const headings = ref([])
 
+// Fonction pour extraire les en-têtes de l'article
 const getHeadings = () => {
   const article = document.querySelector('article')
   if (article) {
     const elements = article.querySelectorAll('h2, h3')
     headings.value = Array.from(elements).map((element) => ({
       id: element.id,
-      text: element.textContent,
+      text: element.textContent?.trim() ?? '',
       level: parseInt(element.tagName.charAt(1)),
     }))
   }
 }
 
-onMounted(() => {
-  getHeadings()
-})
+// Exécuter getHeadings une fois que le composant est monté
+onMounted(getHeadings)
 
+// Observer les changements de route et mettre à jour les en-têtes
 watch(() => route.path, () => {
-  setTimeout(getHeadings, 100)
+  // Utilisation de nextTick pour s'assurer que le DOM est mis à jour
+  nextTick(getHeadings)
 })
 
-const isActive = (id: string) => {
-  const element = document.getElementById(id)
-  if (element) {
-    const rect = element.getBoundingClientRect()
-    return rect.top >= 0 && rect.top <= window.innerHeight / 2
-  }
-  return false
-}
-
+// Fonction pour faire défiler jusqu'à l'en-tête sélectionné
 const scrollToHeading = (event: Event, id: string) => {
   event.preventDefault()
   const element = document.getElementById(id)
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' })
-  }
+  element?.scrollIntoView({ behavior: 'smooth' })
 }
 </script>
 
 <template>
-  <nav class="table-of-contents xl:left-8 xl:top-[200px] xl">
-    <h2 class="text-lg font-semibold mb-4">Table of Contents</h2>
-    <ul class="space-y-2">
-      <li v-for="heading in headings" :key="heading.id">
-        <a
-          :href="`#${heading.id}`"
-          @click="(event) => scrollToHeading(event, heading.id)"
-          :class="{
-            'text-zinc-400 hover:text-zinc-200': !isActive(heading.id),
-            'text-white font-medium': isActive(heading.id),
-            'pl-4': heading.level === 3
-          }"
-          class="block transition-colors duration-200"
-        >
-          {{ heading.text }}
-        </a>
-      </li>
-    </ul>
+  <nav 
+    class="table-of-contents"
+    v-if="headings.length"
+  >
+    <h2 class="text-lg font-semibold mb-4 text-zinc-100">Table of contents</h2>
+    <div
+      v-for="heading in headings" 
+      :key="heading.id"
+    >
+      <ULink
+        :to="`#${heading.id}`"
+        @click="(event) => scrollToHeading(event, heading.id)"
+        class="block py-1 px-2 rounded transition-colors duration-200 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800"
+      >
+      <div class="white-gradient relative transition-all duration-200 text-md">
+        > {{ heading.text }}
+      </div>
+      </ULink>
+    </div>
   </nav>
 </template>
+
+<style scoped>
+.table-of-contents :deep(a) {
+  @apply text-current no-underline;
+}
+</style>

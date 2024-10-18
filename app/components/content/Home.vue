@@ -58,8 +58,7 @@ const { data: stack } = await useAsyncData('stack', () => queryContent('/stack')
         <HomeSocial
           style="--stagger: 5"
           data-animate
-        />
-        
+        />   
         
       </div>
     </div>
