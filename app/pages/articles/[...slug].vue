@@ -25,6 +25,7 @@ function copyArticleLink() {
 }
 
 const { appName } = useAppConfig()
+const appConfig = useAppConfig()
 
 useHead({
   titleTemplate: `%${appName} | %s`,
