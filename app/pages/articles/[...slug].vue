@@ -24,10 +24,21 @@ function copyArticleLink() {
   toast.add({ title: 'Article link copied in your clipboard!' })
 }
 
-defineOgImage({
-  url: page.value.image,
-  width: 1200,
-  height: 600,
+const { appName } = useAppConfig()
+
+useHead({
+  titleTemplate: `%${appName} | %s`,
+})
+
+useSeoMeta({
+  description: () => t('global.app_description'),
+  author: 'shigatena666',
+  ogImage: '',
+  ogType: 'website',
+  ogTitle: appConfig.appName,
+  ogDescription: () => t('global.app_description'),
+  ogUrl: () => runtimeConfig.public.siteUrl,
+  ogLocale: () => locale.value,
 })
 </script>
 

@@ -16,24 +16,18 @@ const { appName, email } = useAppConfig()
 const { t, locale } = useI18n()
 
 useHead({
-  titleTemplate: `%s | ${appName}`,
+  titleTemplate: `%${appName} | %s`,
 })
 
 useSeoMeta({
   description: () => t('global.app_description'),
-  author: 'Hugo Richard',
-  ogImage: 'https://canvas.hrcd.fr/social-preview.jpg',
+  author: 'shigatena666',
+  ogImage: '',
   ogType: 'website',
   ogTitle: appConfig.appName,
   ogDescription: () => t('global.app_description'),
   ogUrl: () => runtimeConfig.public.siteUrl,
   ogLocale: () => locale.value,
-  twitterTitle: appConfig.appName,
-  twitterDescription: () => t('global.app_description'),
-  twitterCard: 'summary_large_image',
-  twitterSite: appConfig.twitterUsername,
-  twitterCreator: appConfig.twitterUsername,
-  twitterImage: 'https://canvas.hrcd.fr/social-preview.jpg',
 })
 
 const { copy } = useClipboard({
