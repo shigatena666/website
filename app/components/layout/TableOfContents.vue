@@ -1,4 +1,3 @@
-<!-- components/TableOfContents.vue -->
 <script lang="ts" setup>
 import { ref, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
@@ -34,15 +33,24 @@ const isActive = (id: string) => {
   }
   return false
 }
+
+const scrollToHeading = (event: Event, id: string) => {
+  event.preventDefault()
+  const element = document.getElementById(id)
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 </script>
 
 <template>
-  <nav class="table-of-contents fixed left-8 top-[200px] xl:block">
+  <nav class="table-of-contents xl:left-8 xl:top-[200px] xl">
     <h2 class="text-lg font-semibold mb-4">Table of Contents</h2>
     <ul class="space-y-2">
       <li v-for="heading in headings" :key="heading.id">
         <a
           :href="`#${heading.id}`"
+          @click="(event) => scrollToHeading(event, heading.id)"
           :class="{
             'text-zinc-400 hover:text-zinc-200': !isActive(heading.id),
             'text-white font-medium': isActive(heading.id),
@@ -56,6 +64,3 @@ const isActive = (id: string) => {
     </ul>
   </nav>
 </template>
-
-<style scoped>
-</style>

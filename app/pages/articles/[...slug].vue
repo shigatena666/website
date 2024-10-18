@@ -61,6 +61,7 @@ defineOgImage({
                 {{ $t("writing.share") }}
               </p>
             </div>
+            <LayoutTableOfContents/>
             <ContentQuery
               v-slot="{ data }"
               :path="$route.path"
@@ -68,9 +69,9 @@ defineOgImage({
               find="one"
             >
               <ContentRenderer :value="data" />
+              <LayoutArticleNavigation/>
             </ContentQuery>
           </article>
-          <TableOfContents />
         </NuxtLayout>
         <DotPattern class="absolute inset-0 -z-10 size-full fill-white/5" />
       </Body>

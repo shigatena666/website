@@ -51,7 +51,7 @@ useSeoMeta({
 <template>
   <div>
     <NuxtPage />
-    <UNotifications />
+    <UNotifications class="pointer-events-none" />
   </div>
 </template>
 
