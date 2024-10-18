@@ -1,6 +1,6 @@
 export default defineAppConfig({
-  appName: 'shigatena',
-  appDescription: 'Built using Canvas. Based on Nuxt and Tailwind CSS. Made by HugoRCD.',
+  appName: 'shigatena.dev',
+  appDescription: 'Personal website of @shigatena666',
   profilePicture: '/assets/profile_picture.jpg',
   footerName: 'shigatena666',
   email: 'contact@shigatena.dev',
