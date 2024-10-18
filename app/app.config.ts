@@ -4,10 +4,8 @@ export default defineAppConfig({
   profilePicture: '/assets/profile_picture.jpg',
   footerName: 'shigatena666',
   email: 'contact@shigatena.dev',
-  twitterUsername: 'shigatena666',
   socials: {
     github: 'https://github.com/shigatena666',
-    twitter: 'https://twitter.com/shigatena666',
     linkedin: 'https://www.linkedin.com/in/shigatena666',
     instagram: 'https://www.instagram.com/shigatena666',
   },
