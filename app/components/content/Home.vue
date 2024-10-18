@@ -47,12 +47,6 @@ const { data: stack } = await useAsyncData('stack', () => queryContent('/stack')
         />
 
         <Divider class="my-8" />
-        
-        <!-- cta -->
-        <HomeCTA
-          style="--stagger: 4"
-          data-animate
-        />
 
         <!-- social -->
         <HomeSocial
