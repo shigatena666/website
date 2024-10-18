@@ -3,7 +3,7 @@ title: "HTB - Pilgrimage"
 date: "11/10/2024"
 description: "Write-up of the Pilgrimage machine on HackTheBox."
 tags: ["HackTheBox"]
-image: "https://www.it-connect.fr/wp-content-itc/uploads/2023/11/Pilgrimage-800x606.png"
+image: "https://shigatena.dev/articles/htb_pilgrimage.png"
 readingTime: "10"
 ---
 

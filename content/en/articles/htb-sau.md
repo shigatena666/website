@@ -3,7 +3,7 @@ title: "HTB - Sau"
 date: "11/10/2024"
 description: "Write-up of the Sau machine on HackTheBox."
 tags: ["HackTheBox"]
-image: "https://www.it-connect.fr/wp-content-itc/uploads/2023/12/hackthebox-writeup-sau.png"
+image: "https://shigatena.dev/articles/htb_sau.png"
 readingTime: "10"
 ---
 

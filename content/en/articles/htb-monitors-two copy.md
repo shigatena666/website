@@ -3,7 +3,7 @@ title: "HTB - MonitorsTwo"
 date: "11/10/2024"
 description: "Write-up of the MonitorTwo machine on HackTheBox."
 tags: ["HackTheBox"]
-image: "https://miro.medium.com/v2/resize:fit:1400/1*fGQbeX4aQAe3lLtaRX02tQ.png"
+image: "https://shigatena.dev/articles/htb_monitorstwo.png"
 readingTime: "10"
 ---
 
